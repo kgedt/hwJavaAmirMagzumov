@@ -24,8 +24,8 @@ public class Main {
         /*int num = 12343321;
         System.out.printf("%b", Palindrome.isPalindrome(num));*/
 
-        /*int num = 123;
-        System.out.printf("isNegative 'num' is %b", CheckNumber.isNegative(num));*/
+        /*int num = -123;
+        System.out.printf("'num' is %s", CheckNumber.check(num));*/
 
         /*int a = 7;
         Fibonacci.calculate(a);*/
