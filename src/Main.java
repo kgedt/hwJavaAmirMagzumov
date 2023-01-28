@@ -52,4 +52,4 @@ Enter 7 discipline mark(letters): B
 Enter 7 discipline credit: 3
 
 GPA = 3.02
-*/
+*/ // test
