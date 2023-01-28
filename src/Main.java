@@ -35,6 +35,7 @@ public class Main {
     }
 }
 //git
+// do 3rd week hw
 
 /*Enter amount of disciplines: 7
 Enter 1 discipline mark(letters): B+
