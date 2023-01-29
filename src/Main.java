@@ -16,8 +16,7 @@ public class Main {
             System.out.printf("Enter %d discipline credit: ", counter++);
             credits[i] = sc.nextInt();
         }
-        GPACalculator GPACalc = new GPACalculator();
-        double GPA = GPACalc.GPACalculate(n, marks, credits);
+        double GPA = GPACalculator.getGPA(n, marks, credits);
         System.out.printf("Your GPA = %.2f", GPA);
     }*/
 

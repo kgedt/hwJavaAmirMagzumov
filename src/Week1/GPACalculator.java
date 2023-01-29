@@ -1,13 +1,9 @@
 package Week1;
 
 public class GPACalculator {
-    private double GPA = 0.0;
 
-    public GPACalculator() {
-
-    }
-
-    public double GPACalculate(int amountOfDisciplines, String marks[], int credits[]) {
+    public static double getGPA(int amountOfDisciplines, String marks[], int credits[]) {
+        double GPA = 0.0;
         if (amountOfDisciplines != marks.length && amountOfDisciplines != credits.length) {
             System.out.println("Different amount of disciplines and marks, credits");
             return -1;
