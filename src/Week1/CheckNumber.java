@@ -6,3 +6,5 @@ public class CheckNumber {
         return num > 0 ? "Positive" : "Negative";
     }
 }
+
+//
