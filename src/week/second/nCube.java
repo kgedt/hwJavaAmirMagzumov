@@ -1,4 +1,4 @@
-package Week2;
+package week.second;
 
 import java.lang.Math;
 

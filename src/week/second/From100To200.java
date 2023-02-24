@@ -1,4 +1,4 @@
-package Week2;
+package week.second;
 
 public class From100To200 {
     public static void main(String[] args) {

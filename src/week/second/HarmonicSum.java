@@ -1,4 +1,4 @@
-package Week2;
+package week.second;
 
 public class HarmonicSum {
     public static void main(String[] args) {

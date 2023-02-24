@@ -1,4 +1,4 @@
-package Week1;
+package week.first;
 
 public class Factorial {
     public static long calculate(int n) {

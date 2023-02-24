@@ -1,6 +1,5 @@
-package Week2;
+package week.second;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class HighScore {
