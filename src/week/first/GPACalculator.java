@@ -1,57 +1,50 @@
 package week.first;
 
+import java.util.Scanner;
+
 public class GPACalculator {
 
-    public static double getGPA(int amountOfDisciplines, String[] marks, int[] credits) {
-        double GPA = 0.0;
-        if (amountOfDisciplines != marks.length && amountOfDisciplines != credits.length) {
-            System.out.println("Different amount of disciplines and marks, credits");
-            return -1;
+    public static String getGPA(int amountOfDisciplines) {
+        Scanner sc = new Scanner(System.in);
+        int[] grades = new int[amountOfDisciplines];
+
+        for (int i = 0; i < grades.length; i++) {
+            grades[i] = sc.nextInt();
         }
 
-        int sumCredits = 0;
-        int cnt = 0;
-        for (String mark : marks) {
-            sumCredits += credits[cnt];
-            switch (mark) {
-                case "A":
-                    GPA += 4.0 * credits[cnt++];
-                    break;
-                case "A-":
-                    GPA += 3.67 * credits[cnt++];
-                    break;
-                case "B+":
-                    GPA += 3.33 * credits[cnt++];
-                    break;
-                case "B":
-                    GPA += 3.0 * credits[cnt++];
-                    break;
-                case "B-":
-                    GPA += 2.67 * credits[cnt++];
-                    break;
-                case "C+":
-                    GPA += 2.33 * credits[cnt++];
-                    break;
-                case "C":
-                    GPA += 2.0 * credits[cnt++];
-                    break;
-                case "C-":
-                    GPA += 1.67 * credits[cnt++];
-                    break;
-                case "D+":
-                    GPA += 1.33 * credits[cnt++];
-                    break;
-                case "D":
-                    GPA += 1.0 * credits[cnt++];
-                    break;
-                case "F":
-                    GPA += 0.0 * credits[cnt++];
-                    break;
-                default:
-                    System.out.println("undefined mark");
-            }
+        int sum = 0;
+        double avg;
+        String GPA;
+
+        for (int i = 0; i < grades.length; i++) {
+            sum += grades[i];
         }
-        GPA = GPA / sumCredits;
+
+        avg = sum/amountOfDisciplines;
+
+            if (avg >= 95)
+                GPA = "A";
+            else if (avg >= 90)
+                GPA = "A-";
+            else if (avg >= 85)
+                GPA = "B+";
+            else if (avg >= 80)
+                GPA = "B";
+            else if (avg >= 75)
+                GPA = "B-";
+            else if (avg >= 70)
+                GPA = "C+";
+            else if (avg >= 65)
+                GPA = "C";
+            else if (avg >= 60)
+                GPA = "C-";
+            else if (avg >= 55)
+                GPA = "D+";
+            else if (avg >= 50)
+                GPA = "D";
+            else
+                GPA = "F";
+
         return GPA;
     }
 }

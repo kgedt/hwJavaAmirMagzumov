@@ -42,7 +42,7 @@ public class GPA {
                     GPA += 1.33 * credits.get(cnt++);
                 else if (grade >= 50)
                     GPA += 1.0 * credits.get(cnt++);
-                else if (grade >= 0)
+                else
                     GPA += 0.0 * credits.get(cnt++);
         }
         GPA = GPA / sumCredits;

@@ -1,7 +1,7 @@
 package week.fourth;
 
 public class Date {
-    private final short[] monthDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    private final int[] monthDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     private int day;
     private int month;
     private int year;
