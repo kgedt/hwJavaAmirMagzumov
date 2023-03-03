@@ -1,7 +1,6 @@
 package algorithms;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.LinkedList;
 
 public class Sortings {
@@ -9,16 +8,22 @@ public class Sortings {
     // TC: best, avg O(n+k), worst O(nlogn)
     // SC: O(n)
     public static void BucketSort(int[] a) {
-        LinkedList<Integer>[] buckets = new LinkedList[10];
+        int size = 10;
+        LinkedList<Integer>[] buckets = new LinkedList[size];
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < size; i++)
             buckets[i] = new LinkedList<>();
 
         // Impelement with insertion add
-        for (int value : a) buckets[value / 10].add(value);
-
-        //for(int i = 0; i < 10; i++)
-        //    Collections.sort(buckets[i]);
+        for (int value : a) {
+            int i = value / 10;
+            buckets[i].add(value);
+            for (int j = buckets[i].size() - 1; j > 0 && buckets[i].get(j - 1) > buckets[i].get(j); j--) {
+                int tmp = buckets[i].get(j - 1);
+                buckets[i].set(j - 1, buckets[i].get(j));
+                buckets[i].set(j, tmp);
+            }
+        }
 
         int ind = 0;
         for (int i = 0; i < 10; i++) {
