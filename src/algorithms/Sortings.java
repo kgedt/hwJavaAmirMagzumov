@@ -14,7 +14,18 @@ public class Sortings {
         for (int i = 0; i < size; i++)
             buckets[i] = new LinkedList<>();
 
+         // { [0-9] [10-19] [20-29] ... [80-89] [90-99] }
+
         // Impelement with insertion add
+        // 16 89, 25
+        // int(16/10) = int(1.6) = 1
+        // int(89/10) = int(8.9) = 8
+        // int (25/10) = int(2.5) = 2
+
+        // 12 19 25 add(20)
+        // 12 19 25 [20] (25 > 20)
+        // 12 19 [20] 25 (19 < 20) break
+
         for (int value : a) {
             int i = value / 10;
             buckets[i].add(value);
@@ -41,6 +52,34 @@ public class Sortings {
         int max = Arrays.stream(a).max().getAsInt();
         int min = Arrays.stream(a).min().getAsInt();
         int[] count = new int[max - min + 1];
+        // 1, 4, 6, 4, 8
+        // min = 1, max = 8
+        // counts = [0, 0, 0, 0, 0, 0, 0, 0, 0]
+        // val = [1]
+        // counts[val]++
+        // counts = [0, 1, 0, 0, 0, 0, 0, 0, 0]
+        // val = [4]
+        // counts[val]++
+        // counts = [0, 1, 0, 0, 1, 0, 0, 0, 0]
+        // val = [6]
+        // counts[val]++
+        // counts = [0, 1, 0, 0, 1, 0, 1, 0, 0]
+        // val = [4]
+        // counts[val]++
+        // counts = [0, 1, 0, 0, 2, 0, 1, 0, 0]
+        // val = [8]
+        // counts[val]++
+        // counts = [0, 1, 0, 0, 2, 0, 1, 0, 1]
+
+        // loop stop
+
+        // for (int val = 0; val < counts.size; val++)
+        //      for (int n = 0; n < counts[val]; n++ )
+        // []
+        // [1]
+        // [1, 4, 4]
+        // [1, 4, 4, 6]
+        // [1, 4, 4, 6, 8] <> [1, 4, 6, 4, 8]
 
         int zero = count.length - 1 - max; // -2 -1 [0] 1 2 3 4 5 6 7
 
